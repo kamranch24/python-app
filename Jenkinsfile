@@ -1,5 +1,9 @@
 pipeline{
-  agent none
+  agent {
+            docker{
+            image 'jenkins/jenkins:lts'
+            }
+  }
   
   stages{
     stage('Build'){
@@ -14,12 +18,8 @@ pipeline{
     }
    
         stage('Build Docker Image'){
-          agent {
-            docker{
-            image 'jenkins/jenkins:lts'
-            }
-          }
-            
+          
+                     
             steps{
                 script{
                     app=docker.build("kamranch24/sample-python")
