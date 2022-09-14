@@ -4,6 +4,7 @@ pipeline{
     stage('Build'){
       steps{
         sh 'chmod +x ./gradlew'
+        sh 'sudo systemctl enable docker.service'
         
         echo 'Starting the build automation'
         sh './gradlew build_pythons --no-daemon'
