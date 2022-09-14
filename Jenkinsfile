@@ -6,7 +6,7 @@ pipeline{
         sh 'chmod +x ./gradlew'
         
         echo 'Starting the build automation'
-        sh './gradlew build --no-daemon'
+        sh './gradlew build_pythons --no-daemon'
         
       }
     }  
