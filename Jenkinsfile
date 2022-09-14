@@ -6,6 +6,7 @@ pipeline{
   stages{
     stage('Build'){
       steps{
+        sh 'echo $PATH'
         sh 'chmod +x ./gradlew'
              
         echo 'Starting the build automation'
