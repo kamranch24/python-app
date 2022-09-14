@@ -1,7 +1,7 @@
 pipeline{
   agent {
     docker{
-  IMAGE 'python:3.8-alpine'  
+        image 'python:3.8-alpine'  
     }
   }
   
