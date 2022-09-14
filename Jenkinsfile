@@ -1,10 +1,12 @@
 pipeline{
   agent any
+   tools {
+     'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'docker'
+    }
   stages{
     stage('Build'){
       steps{
         sh 'chmod +x ./gradlew'
-        sh 'systemctl enable docker.service'
         
         echo 'Starting the build automation'
         sh './gradlew build_pythons --no-daemon'
