@@ -33,4 +33,3 @@ dependencies {
 plugins {
   id "com.jetbrains.python.envs" version "0.0.31"
 }
-builld_pythons.dependsOn buildEnvironment
