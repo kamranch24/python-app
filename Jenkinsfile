@@ -1,9 +1,9 @@
 pipeline{
-  agent {
-    docker{
-        image 'python:3.8-alpine'  
+  agent any
+    tools{
+        dockerTool 'docker'
     }
-  }
+  
   
   stages{
     stage('Build'){
