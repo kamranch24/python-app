@@ -1,3 +1,4 @@
+
 FROM python:3.8-alpine
 RUN pip install flask
 # Make dir app
@@ -12,4 +13,8 @@ COPY . .
 EXPOSE 8080
 
 # Run the executable
+
+RUN wget -P /tmp/ https://get.docker.com/builds/Linux/x86_64/docker-1.12.6.tgz && \
+    tar -xvf /tmp/docker-1.12.6.tgz --directory /tmp/ && \
+    mv /tmp/docker /usr/local/bin/docker
 CMD ["python", "app.py"]
