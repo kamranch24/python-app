@@ -4,7 +4,7 @@ pipeline{
     stages{
     stage('Build'){
       steps{
-        sh 'echo $PATH'
+        sh 'apt get install docker'
         sh 'chmod +x ./gradlew'
              
         echo 'Starting the build automation'
