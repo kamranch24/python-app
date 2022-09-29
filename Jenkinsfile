@@ -28,8 +28,9 @@ pipeline{
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com/', 'dockerHubCred') {
-                        sh 'docker push kamranch24/cicd-python:$BUILD_NUMBER'
-                        sh 'docker push kamranch24/cicd-python:latest'
+                        app.push("$(env.BUILD_NUMBER)")
+                        app.push("latest")
+                        
 
 
                     }
