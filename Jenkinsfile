@@ -17,7 +17,7 @@ pipeline{
                      
             steps{
                 script{
-                    app=docker.build("kamranch24/sample-python")
+                    app=docker.build("kamranch24/cicd-python")
                                      
                     }    
             }
@@ -28,8 +28,8 @@ pipeline{
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com/', 'dockerHubCred') {
-                        sh 'docker push docker.io/kamranch24/sample-python:$BUILD_NUMBER'
-                        sh 'docker push docker.io/kamranch24/sample-python:latest'
+                        sh 'docker push kamranch24/cicd-python:$BUILD_NUMBER'
+                        sh 'docker push kamranch24/cicd-python:latest'
 
 
                     }
