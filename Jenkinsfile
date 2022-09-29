@@ -17,7 +17,7 @@ pipeline{
                      
             steps{
                 script{
-                    app=docker.build("sample-python")
+                    app=docker.build("kamranch24/sample-python")
                                      
                     }    
             }
@@ -28,8 +28,8 @@ pipeline{
             steps {
                 script {
                     docker.withRegistry('https://registry.hub.docker.com/', 'dockerHubCred') {
-                        sh 'docker push sample-python:$BUILD_NUMBER'
-                        sh 'docker push sample-python:latest'
+                        sh 'docker push kamranch24/sample-python:$BUILD_NUMBER'
+                        sh 'docker push kamranch24/sample-python:latest'
 
 
                     }
